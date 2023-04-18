@@ -37,7 +37,7 @@ def indentation_analysis_main():
     Burgers_Vector = ((Lattice_Param*math.sqrt(3))/2)**3 # Burgers vector calculation for perfect dislocations. This is for BCC structure. 
     
     source_path = '/srv/hemi01-j01/htmdec/ucsb/data/indentation/BRC603-B2/Low Res'
-    dest_path = '/srv/hemi01-j01/htmdec/ucsb/data/indentation/indentation_analysis'
+    dest_path = '/srv/hemi01-j01/htmdec/ucsb/data/indentation_analysis'
     
     indentation_analysis_run(Row, Col, i, color, b, a, J1, SR_diff, T, Kb, Burgers_Vector, source_path, dest_path, 
                              Hardness_Table, Modulus_Table, SRS_Table, V_act_Table)

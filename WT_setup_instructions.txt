@@ -1,0 +1,25 @@
+# 1] Inside the portal
+Open and log on https://data.htmdec.org
+Navigate to Collections > JHU/UCSB > indentation
+"Play" > Create a Tale
+	Enter name
+	Choose Jupyter Lab	
+Run Tale (starts JupyterLab instance)
+Open
+
+# 2] Set up commands
+git init
+git remote add origin https://github.com/htmdec/ucsb
+git pull
+git checkout master
+
+# 3] adjustments for script
+mkdir
+
+Modified *main.py:
+
+    source_path = '/home/jovyan/work/data/BRC603-B2/Low Res'
+    dest_path = '/home/jovyan/work/workspace/indentation_analysis'
+
+Note: 
+Data is mounted via FUSE filesystem in '/home/jovyan/work/data' based on the collection selected

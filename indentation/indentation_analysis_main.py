@@ -39,6 +39,9 @@ def indentation_analysis_main():
     source_path = '/srv/hemi01-j01/htmdec/ucsb/data/indentation/BRC603-B2/Low Res'
     dest_path = '/srv/hemi01-j01/htmdec/ucsb/data/indentation_analysis'
     
+    # source_path = '/home/jovyan/work/data/BRC603-B2/Low Res' # reading from FUSE mounted version of the server filesystem 
+    # dest_path = '/home/jovyan/work/workspace/data/indentation_analysis' # writing to tale local file system 
+    
     indentation_analysis_run(Row, Col, i, color, b, a, J1, SR_diff, T, Kb, Burgers_Vector, source_path, dest_path, 
                              Hardness_Table, Modulus_Table, SRS_Table, V_act_Table)
     

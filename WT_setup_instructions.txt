@@ -14,12 +14,12 @@ git pull
 git checkout master
 
 # 3] adjustments for script
-mkdir
+pip install -r requirements.txt
 
-Modified *main.py:
+Inside indentation_analysis_run.py, modify accordingly:
 
     source_path = '/home/jovyan/work/data/BRC603-B2/Low Res'
-    dest_path = '/home/jovyan/work/workspace/indentation_analysis'
+    dest_path = '/home/jovyan/work/workspace/data/indentation_analysis'
 
 Note: 
 Data is mounted via FUSE filesystem in '/home/jovyan/work/data' based on the collection selected

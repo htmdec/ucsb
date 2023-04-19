@@ -1,6 +1,7 @@
 import datetime
 from io import BytesIO
 from openmsistream import DataFileStreamProcessor
+from indentation_analysis_main import indentation_analysis_main
 import re 
 import sys
 sys.path.append("..")
@@ -30,16 +31,10 @@ class IndentationAnalysisProcessor(DataFileStreamProcessor) :
         
     def _process_downloaded_data_file(self,datafile,lock) :
         """
-        Run the flyer analysis on the downloaded data file
-        returns None if processing was successful, an Exception otherwise
-        """
         
-        r = re.compile('^..-{2}\d{8}-{2}\d{5}.txt$') # doesn't include all for now 
-        if not r.match(datafile.filename):
-            return None
-        bytestring_data = True
+        """
         try :
-            # indentation_analysis_main
+            indentation_analysis_main()
             if self._output_file is not None :
                 self.__write_result_to_csv(result,lock)
             elif self._engine is not None :
@@ -89,7 +84,7 @@ class IndentationAnalysisProcessor(DataFileStreamProcessor) :
         alpss_analysis.close()
         run_stop = datetime.datetime.now()
         #shut down when that function returns
-        msg = 'Flyer analysis stream processor '
+        msg = 'Indentation analysis stream processor '
         if args.output_dir is not None :
             msg+=f'writing to {args.output_dir} '
         msg+= 'shut down'
@@ -108,7 +103,7 @@ class IndentationAnalysisProcessor(DataFileStreamProcessor) :
         alpss_analysis.logger.info(msg)
 
 def main(args=None) :
-    ALPSStreamProcessor.run_from_command_line(args=args)
+    IndentationAnalysisProcessor.run_from_command_line(args=args)
 
 if __name__=='__main__' :
     main()
